@@ -306,7 +306,7 @@ def metrics():
 @app.route('/metric/<metric>')
 def metric(metric):
     name = urllib.unquote(metric)
-    metric = puppetdb.metric(metric)
+    metric = puppetdb.metric(name)
     return render_template(
         'metric.html',
         name=name,
